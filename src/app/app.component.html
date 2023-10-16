@@ -1,7 +1,16 @@
-<div style="padding-bottom: 32px;">Emulation of first person having single dragon tile and holding it through the whole game:</div>
+<div style="padding-bottom: 32px">
+  Emulation of first person having single dragon tile and holding it through the
+  whole game (number of epochs = {{ epochs }}):
+</div>
 <ng-container *ngFor="let turn of turns">
   <b>Turn {{ turn.number }}</b
   ><br />
-  Double Dragon probability for another player: {{ ((turn.dragonDoubleForAnotherPlayerCount / epochs) * 100).toPrecision(3) }}%<br>
-  Dragon Pung probability for the player: {{ ((turn.dragonPungForFirstPlayerCount / epochs) * 100).toPrecision(3) }}%<br>
+  Double Dragon probability for another player:
+  {{
+    ((turn.dragonDoubleForAnotherPlayerCount / epochs) * 100).toPrecision(3)
+  }}%<br />
+  Dragon Pung probability for the player:
+  {{
+    ((turn.dragonPungForFirstPlayerCount / epochs) * 100).toPrecision(3)
+  }}%<br />
 </ng-container>

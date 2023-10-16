@@ -22,7 +22,7 @@ export class AppComponent {
   public wallTiles: TileInterface[] = [];
   public hands: TileInterface[][] = [];
   private turnsToEmulate = 12;
-  public readonly epochs = 100000;
+  public readonly epochs = 1000000;
   public currentEpoch = 1;
   public turns: TurnInterface[] = [];
 
