@@ -21,7 +21,7 @@ const RED_DRAGON_TILE: TileInterface = {
 export class AppComponent {
   public wallTiles: TileInterface[] = [];
   public hands: TileInterface[][] = [];
-  private turnsToEmulate = 12;
+  private turnsToEmulate = 16;
   public readonly epochs = 1000000;
   public currentEpoch = 1;
   public turns: TurnInterface[] = [];
