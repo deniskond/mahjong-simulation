@@ -1,16 +1,36 @@
 <div style="padding-bottom: 32px">
-  Emulation of first person having single dragon tile and holding it through the
-  whole game (number of epochs = {{ epochs }}):
+  Emulation of first person having single dragon tile and implementing different strategies (number of epochs = {{ epochs }}):
 </div>
-<ng-container *ngFor="let turn of turns">
+<!-- <ng-container *ngFor="let turn of turns">
   <b>Turn {{ turn.number }}</b
   ><br />
-  Double Dragon probability for another player:
+  Dragon Pung probability for another player:
   {{
-    ((turn.dragonDoubleForAnotherPlayerCount / epochs) * 100).toPrecision(3)
+    ((turn.dragonPungForAnotherPlayerCount / epochs) * 100).toPrecision(3)
   }}%<br />
   Dragon Pung probability for the player:
   {{
     ((turn.dragonPungForFirstPlayerCount / epochs) * 100).toPrecision(3)
   }}%<br />
+</ng-container> -->
+<ng-container *ngFor="let result of results">
+  <b>Strategies:</b><br />
+  |
+  <ng-container *ngFor="let strategy of result.strategies"
+    >{{ strategy }} | </ng-container
+  ><br />
+  <b>Double for player probability:</b>
+  {{ result.doubleForPlayerProbability.toPrecision(3) }} <br />
+  <b>Double for opponent probability:</b>
+  {{ result.doubleForOpponentsProbability.toPrecision(3) }} <br />
+</ng-container>
+
+<br>
+<ng-container *ngFor="let comparisonResult of comparisonResults">
+  <b>Strategy:</b><br />
+  {{ comparisonResult.strategy }}<br />
+  <b>Double for player probability:</b>
+  {{ comparisonResult.doubleForPlayerProbability.toPrecision(3) }} <br />
+  <b>Double for opponent probability:</b>
+  {{ comparisonResult.doubleForOpponentsProbability.toPrecision(3) }} <br />
 </ng-container>
